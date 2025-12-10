@@ -3,40 +3,117 @@
 <html>
 	<!-- Entete de la page -->
 	<head>
-		<meta sharset="utf-8">
-		<title>Mon premier projet du Cours | par Joel Sandé</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Le Destresseur du Saguenay ( votre espace détente )</title>
 		<link rel="stylesheet" type="text/css" href="css/design_jardin_secret.css"/>
 		<script src="js/data.js"></script>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins|Sofia|Trirong|Audiowide">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&effect=fire|neon|outline|emboss|shadow-multiple"> 
+		
+		<!-- Bonus performance (aide le navigateur èa charger l'image plus tôt) -->
+		<link rel="preload" as="image" href="img/background_image/blue_sky_1.jpeg" imagesrcset="img/background_image/blue_sky_2.jpeg">
+
+		<!-- Référencement : Être trouvable (SEO + partage social) -->
+		<meta name="description" content="Le Destresseur du Saguenay : musique, respiration, rires, yoga — anti-stress 100% gratuit.">
+		<meta property="og:title" content="Le Destresseur du Saguenay">
+		<meta property="og:description" content="Respire, relaxe, souris. 100% gratuit.">
+		<meta property="og:image" content="img/og/preview.jpg">
+		<meta property="og:type" content="website">
+		<meta name="twitter:card" content="summary_large_image">
+
+		<meta name="description" content="Respire, relaxe, souris. 100% gratuit.">
+  		<link rel="canonical" href="https://ton-domaine.tld/">
+
+		<!-- Référencement : Être trouvable (Données structurées (JSON-LD) pour le SEO + partage social) -->
+		<script type="application/ld+json">
+			{
+				"@context":"https://schema.org",
+				"@type":"WebSite",
+				"name":"Le Destresseur du Saguenay",
+				"url":"https://ton-domaine.tld/",
+				"potentialAction": {
+						"@type":"SearchAction",
+						"target":"https://ton-domaine.tld/?q={search_term_string}",
+						"query-input":"required name=search_term_string"
+				}
+			}
+		</script>
+		
+		<!-- Lié au Manifest.json (Incarner une app (PWA 100% statique))-->
+		<link rel="manifest" href="/manifest.json">
+		<meta name="theme-color" content="#0ea5e9">
+		
+		<!-- Lié au ws.js (Incarner une app (PWA 100% statique))-->
+		<script>
+			if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js");
+		</script>
+
+
 	</head>
 
 	<!-- Corps de la page -->
 	<body>
 		<header>
-			<h2> Contenu Confidentiel </h2>
-			<p class="oublie"> Pour l'instant, je garde ce site confidentiel, le temps de l'améliorer s'il y a lieu. Entrez-y si vous avez le mot-de-passe...</p>
-        </header>
+			<h2> Le Destresseur du Saguenay </h2>
+			<p class="oublie">Oublie ton stress, oublie tes soucis, et viens te détendre 5 min dans votre Espace Destresse, votre Petit Jardin  : Tranquilises-toi, Apaises-toi, Divertis-toi, Motives-toi...</p>
+			
+			<!-- Bandeau image (plein écran) loading="eager" ou 'lazy'-->
+  			<img src="img/background_image/blue_sky_1.jpeg" class="hero-img" alt="Ciel apaisant" width="100%" height="400" loading="eager"/>
+			
+			<a href="vos_impressions.html" title="Formulaire de satisfaction : Laissez-nous savoir votre expérience de visite du site"><img id="formulaire1" src="img/feedback_1.png"/></a>
+			<nav>
+				<ul>
+					<li><a href="index.html" title="Restes sur cette page d'accueil">Musique & Nature</a></li>
+					<li><a href="instrumentale.html" title="Écouter des instruments de musique">Instrumentale</a></li>
+					<li><a href="relax_religieuse.html" title="Écouter de la musique réligieuse">Musique Relaxante</a></li>
+					<li><a href="sport.html" title="Regarder des évenements sportifs ">Sport</a></li>
+					<li><a href="rions.html" title="Un peu d'humour pour eggayer votre journee">Rions un peu</a> !</li>
+					<li><a href="documentaires.html" title="Voir quelques documentaires inspirants">Documentaires</a></li>
+					<li><a href="motivation.html" title="Comment puis-je me remotiver">Motivation</a></li>	
+					<li><a href="activite.html" title="Faire quelques activités en restant devant mon écran">Activité</a></li>
+                    <li><a href="service_aide.html" title="Contacter le Service d'Aide de la région du Saguenay">Service d'Aide</a></li>
+				</ul>
+			</nav>
 
-        <div class="boite_mot_de_passe">
-            <p>
-                Ce petite site pourra plus tard venir en aide aux personnes qui traversent des moments difficiles... <br>
-                Il y aura plusieurs rubriques selon certaines thématiques recherchées. 
-                
-                Pour l'instant, je le garde confidentiel, le temps de le pofiner.
-                Donc, prière de sortir immédiatement si vous êtes tombé(e) par hasard sur le ce site privé.<br><br>
-                Merci pour votre compréhension.
-            </p>
-            <label>Mot de Passs d'access au site </label><br>
-            <input placeholder="entrez-le ici..." id="messageWeb"/> <button type="button" id="Soumettre" onclick="Soumettre()"> Soumettre ! </button><br><br>
-            <p id="messageErreur"> Vous ne pouvez PAS envoyer un message VIDE ! Il faut ABSOLUMENT écrire quelque chose ! </p><button onclick="FaireDisparaitre()" id="OK"> OK </button>
+		</header>
 
-        </div>
+		<div class="limite-video">
+			<!--- Musique et Nature --->
+			<div class="cadre_video">
+				<iframe src="https://www.youtube.com/embed/irZ-sXAZKF0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<div class="cadre_video">
+				<iframe src="https://www.youtube.com/embed/fb_HVDc9mWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen controls autoplay muted></iframe>
+			</div>
+			<div class="cadre_video">
+				<iframe src="https://www.youtube.com/embed/mCNHFAlcf-4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<div class="cadre_video">
+				<iframe src="https://www.youtube.com/embed/GSkffO4A_p8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<div class="cadre_video">
+				<iframe src="https://www.youtube.com/embed/fQrTAn8fWwU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			
+		</div>
 
+		<!--- Rendre la valeur « addictive » --->
+		<button id="share">Partager</button>
+		<script>
+			document.getElementById('share').onclick = async ()=>{
+			const data = { title:"Le Destresseur", text:"Pause zen avec moi 💆", url:location.href };
+			if (navigator.share) try { await navigator.share(data); } catch(e){}
+			else navigator.clipboard.writeText(data.url);
+			};
+		</script>
+
+		<br><br><br><br><br><br>
+		
 	</body>
-
+	
 	<!-- Le pied de page -->
 	<footer>
-		Pour l'instant, je garde ce site confidentiel, le temps de l'améliorer s'il y a lieu  | Tout Droits Réservés
+		Pssss ! n'hésite pas à demander de l'aide quand tu en a besoin. Surtout quand les services existent, il faut en profiter ;) Ça peut changer toute une vie | Tous Droits Réservés | Joel Sandé, avec la contribution intellectuelle de Dr. Michael Migan, Médecin Pathologiste, Mlle Myriam Bindia Samassi, Maitrise en Gestion des Organisations, Mlle Esther Gagnée, conseillère PsychoSociale, Mr Éric Dallaire, conseiller Général.
 	</footer>
 </html>
